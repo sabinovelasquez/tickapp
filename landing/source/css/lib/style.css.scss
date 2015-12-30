@@ -1,1 +1,63 @@
 @import 'functions';
+@import 'logo64';
+
+$blue: #3498db;
+
+.logo{
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+video { 
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-10%);
+  background: url('../video/poster.jpg') no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+@media screen and (max-device-width: 400px) {
+  html {
+    background: url('../video/poster.jpg') no-repeat top center;
+  }
+  #bgvid { display: none; }
+}
+
+.tickapp-body{
+  padding-top: 10%;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  :before{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    opacity: .5;
+    background: $blue;
+    z-index: -1;
+  }
+}
+footer{
+  position: fixed;
+  width:100%;
+  bottom: 0;
+  color: white;
+  padding: 8px 0 0;
+  background: rgba(darken($blue, 70), .5);
+  .icon{
+    font-size: 1.4em;
+  }
+}

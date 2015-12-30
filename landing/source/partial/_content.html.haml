@@ -1,0 +1,17 @@
+%video#bgvid{ :autoplay => 'autoplay', :loop => 'loop', :poster => 'video/poster.jpg' }
+  %source{ :src => 'video/tickappbg.webm', :type => 'video/webm' }
+    %source{ :src => 'video/tickappbg.mp4', :type => 'video/mp4' }
+.tickapp-body
+  .container
+    .logo
+    %h1.text-center
+      Tickapp
+    %p.text-center
+      %small.text-center
+        No más filas.
+%footer
+  %p.text-center
+    %small
+      Próximamente
+      %i.fa.fa-apple.icon
+      %i.fa.fa-android.icon
