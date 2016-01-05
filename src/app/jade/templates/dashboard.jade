@@ -1,8 +1,20 @@
-ion-view
-  ion-tabs.tabs-icon-top.tabs-balanced
-    ion-tab(title='Dashboard', icon='ion-home', href='#/main/dash')
-      ion-nav-view(name='dash-tab')
-    ion-tab(title='Public', icon='ion-earth', href='#/main/public')
-      ion-nav-view(name='public-tab')
-    ion-tab(title='Secret', icon='ion-nuclear', href='#/main/admin')
-      ion-nav-view(name='admin-tab')
+ion-view(view-title='Dashboard', name='dashboard-view')
+  ion-nav-buttons(side='right')
+    button.button.icon-left.ion-log-out.button-stable(ng-click='logout()') Logout
+  ion-content.padding
+    .row
+      .col.text-center
+        h3.title Welcome {{username}}!
+        |       This could be your Dashboard.
+        br
+        br
+        br
+        button.button.button-full.button-positive(ng-click='performValidRequest()')
+          | Make Valid Request
+        button.button.button-full.button-energized(ng-click='performUnauthorizedRequest()')
+          | Make Request for unauthorized resource
+        button.button.button-full.button-assertive(ng-click='performInvalidRequest()')
+          | Make Request without valid token
+        br
+        br
+        |       {{response}}
