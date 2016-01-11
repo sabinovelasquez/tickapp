@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'ngMockE2E'])
+angular.module('starter', ['ionic', 'ngMockE2E', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

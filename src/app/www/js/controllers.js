@@ -40,7 +40,12 @@ angular.module('starter')
   };
 })
 
-.controller('DashCtrl', function($scope, $state, $http, $ionicPopup, AuthService) {
+.controller('DashCtrl', function($scope, $state, $http, $ionicPopup, AuthService, $firebaseArray) {
+  var ref = new Firebase("https://tickapp.firebaseio.com/");
+  $scope.videos = $firebaseArray(ref);
+
+  console.log($scope.videos);
+
   $scope.logout = function() {
     AuthService.logout();
     $state.go('login');
