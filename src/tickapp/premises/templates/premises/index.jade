@@ -1,0 +1,25 @@
+| {% if latest_premise_list %}
+ul
+  | {% for premise in latest_premise_list %}
+  li
+    a(href="/premises/{{ premise.name }}/")
+      {{ premise.name }}
+  | {% endfor %}
+
+| {% else %}
+p
+  | nothing.
+| {% endif %}
+
+
+//- | {% if latest_question_list %}
+//-   ul
+//-     | {% for premise in latest_premise_list %}
+//-       li
+//-         a(href="/premises/{{ premise.id }}/") {{ premise.name }}
+          
+//-     endfor
+//- else
+//-   p
+//-     |nada aun.
+//- endif

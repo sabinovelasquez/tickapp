@@ -5,6 +5,8 @@ from django.utils import timezone
 
 class Premise(models.Model):
   name = models.CharField(max_length=200)
+  code = models.CharField(max_length=20)
+  description = models.CharField(max_length=200)
   pub_date = models.DateTimeField('published')
   def was_published_recently(self):
     return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
