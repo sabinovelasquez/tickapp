@@ -10,6 +10,8 @@ class Premise(models.Model):
   pub_date = models.DateTimeField('published')
   def was_published_recently(self):
     return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+  def __unicode__(self):
+    return "%s -code: %s" % (self.name, self.code)
 
 class Choice(models.Model):
   question = models.ForeignKey(Premise, on_delete=models.CASCADE)
