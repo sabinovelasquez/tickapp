@@ -17,6 +17,7 @@ class Premise_Category(models.Model):
   premise = models.ForeignKey(Premise, on_delete=models.CASCADE)
   cat_name = models.CharField(max_length=200)
   cat_desc = models.TextField(max_length=100, blank=True)
+
   def __unicode__(self):
     return "%s" % (self.cat_name)
 
@@ -31,3 +32,5 @@ class Drink(models.Model):
 class Category(models.Model):
   cat_name = models.CharField(max_length=200)
   cat_desc = models.TextField(max_length=100, blank=True)
+  def __unicode__(self):
+    return "%s" % (self.cat_name)
